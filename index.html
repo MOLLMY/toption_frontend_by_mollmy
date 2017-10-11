@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="TTD">
+		<meta name="keywords" content="option,toption,future,期权,期货,网页股票交易,TTD,Toption,Option,OPTION,Toption,TOPTION,Future,FUTURE">
+		 <meta name="description" content="">
+		 
+		<title>Toption</title>
+		
+		<!--添加网页icon图标-->
+		<link rel="shortcut icon" href="./logo_32.ico">
+		<link rel="Bookmark" href="./logo_32.ico">
+		
+		<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			if ($.ajax({type:"get", url:"./userManage/getUsername.php", async:false}).responseText == 1) window.location.href = "./login.html";
+			else window.location.href = "./main.html";
+		</script>
+	</body>
+</html>

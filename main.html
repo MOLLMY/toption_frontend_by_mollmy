@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,target-densitydpi=device-dpi">	
+		<!--添加网页icon-->
+		<link rel="shortcut icon" href="./logo_32.ico">
+		<link rel="Bookmark" href="./logo_32.ico">
+		<meta name="author" content="TTD">
+		
+		<title>Toption</title>	
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		
+		<!-- javascript -->
+		<!--<script type="text/javascript" src="./js/jquery.js"></script>-->
+		<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+		<script type="text/javascript" src="./js/50ETFChart.js"></script>
+		<script type="text/javascript" src="./js/Highstock/js/highstock.js"></script>
+	</head>
+	
+	<body>
+	<div id="container">
+		<!------------------- 上方导航栏 -------------------------------->
+		<div id="top" role="navigation">
+			<div class="menuWrap">	
+				<ul class = "menu">		
+					<li id = "dueDate" class="label">到期年月</li>								
+					<li id = "dropDown-dueDate-menu" class="item">							
+						<input type="month" id="dropDown-dueDate-menu-date" name="dueDate">							
+					</li>															
+				</ul>	
+							
+			</div>	<!--class wrap-->
+			<div id="accountWrap" align="center">
+				<div id="account-ico">
+					<img id="userAccount-button" src="./res/img/ico_person.png">
+				</div>
+				<ul id="account-menu">
+					<a href="#"><li class="account-list">个人账户</li></a>
+					<a href="./login.html"><li class="account-list">退出登录</li></a>
+				</ul>
+			</div>
+		</div>	<!--top,顶部导航栏-->
+		
+		
+		<!----------------中部，期权详细数据 -------------------------------->
+		<div id="middle">
+			
+			<!--小标题-->	
+			<div class="subtitle" id="subtitleOptionDetail">			
+				<ul class="liststyle">
+				<li>期权详细数据</li>
+				</ul>				
+			</div>
+			
+			<!--------中部上半部分，搜索和两行的表格------------>
+			<div id="middle-top">
+				<!--搜索-->
+				<div id="searchWrap">
+					
+					<input type = "search" id="liveSearch" name="userSearch" placeholder="请输入搜索内容">				
+				</div>			
+				<!--标的表格,50ETF-->
+				<div id="underlyingCommodity-wrap" >
+					<table id="50ETF-table" class="tableStyle">
+					<tr height="40px">
+						<th>最新价</th>
+						<th>涨跌额</th>
+						<th>涨跌幅</th>		
+						<th>最高价</th>
+						<th>最低价</th>
+						<th>总手</th>				
+						<th id="updateTime">更新时间</th>						
+					</tr>
+					<tr id="50ETF-table-content" height="40px">
+						<td>-</td>
+						<td id="changeAmount">-</td>
+						<td id="quoteChange">-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						
+					</tr>
+					</table>
+				</div>
+			</div><!--标的表格结束-->
+			
+			<!------期权详细表格--------->
+			<div id="optionDataSheets-wrap">
+			    <div class="tableHead"><!--表头-->
+					<table id="optionDataSheets-tableHead" class="tableStyle">
+						<tr align="center" class="yellowText">
+							<th colspan="6">
+								看跌
+							</th>		
+							<th align:center class="noborder" style="border:0;"><hr size="2px" color="#2e2e2e"></th>				
+							<th colspan="6" class="noborder" style="border:0;">
+								看涨
+							</th>
+						</tr>
+						<tr>
+							<th>代码</th>
+							<th>成交量</th>
+							<th>卖价</th>
+							<th>买价</th>
+							<th>涨跌幅</th>
+							<th>现价</th>
+							<th id="exercisePrice">行权价</th>
+							<th id="n_price">现价</th>
+							<th>涨跌幅</th>
+							<th>买价</th>
+							<th>卖价</th>
+							<th>成交量</th>
+							<th>代码</th>
+						</tr>					
+					</table>
+			     </div><!--表头结束-->
+				 
+					<div id="optionDataSheets-scroll" class="scrollTable">		
+						<table id="optionDataSheets-table" class="tableStyle">
+							
+				    	</table>
+				    </div><!--表格正文结束-->
+			</div>			
+		</div><!--	middle结束-->
+		
+		<!--------------右半部分，走势图、资讯------------------------------->
+		<div id="right">
+			
+			<!--------- 走势图 ---------->
+			<div id="chartWrap">		
+			<!--小标题-->	
+			<div class="subtitle" id="subtitleChart">			
+				<ul class="liststyle">
+				<li>
+					<button id="chart-button" class="chartButton">走势图</button>
+					<button id="probability-button" class="chartButton">盈亏图/概率图</button>
+				</li>			
+			
+				</ul>				
+			</div>		
+			<div id="Figure">
+					
+			</div>
+			
+			<script type="text/javascript">
+				$('#chart-button').css('border-bottom','1px solid #828282');
+			
+				showTimeChartWithVolume("Figure");
+			
+				timeChartInterval = setInterval(function() {
+					showTimeChartWithVolume("Figure");
+				}, 5000);
+			</script>
+			
+			</div><!--走势图部分结束-->
+			
+			<!-- 相关资讯 ------------------>
+			<div id="relatedNews">	
+			<!--小标题-->	
+			<div class="subtitle" id="subtitleRelatedNews">			
+				<ul class="liststyle">
+				<li>相关资讯</li>
+				</ul>				
+			</div>
+			<div id="newsWrap">
+				<table id="news">
+				</table>
+			</div>				
+			</div><!--相关资讯结束-->
+		</div>	<!--right结束-->
+		
+		<!-------------------底部------------------------------------->
+		<div id="bottom">
+			<!--左下部-------------------------->
+			<div id="bottom-left">		
+				<!-- 手动/自动交易 ------------------->
+				<div id="tradingInfoButtonWrap">
+					
+					<button id="automatic" class="tradingButton"><b>期权交易策略库</b></button>
+					<br>
+					<button id="manually" class="tradingButton"><b>自主生成策略</b></button>
+				</div>
+				
+			<!--交易信息-------------->
+				<div id="tradingInfo">
+					<!--小标题------------------>	
+					<div class="subtitle" id="">			
+						<ul class="liststyle">
+						<li>交易信息</li>
+						</ul>				
+					</div>
+					<div id="tradingInfoTable-wrap">
+						<table id="tradingInfo-table" class="tableStyle">
+							<tr>
+								<th>成本</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th>市值</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th>盈亏</th>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th>盈亏比率</th>
+								<td>&nbsp;</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- ----------右下部 当前持仓情况----------------- -->
+			<div id="bottom-right">
+				<!--小标题-->	
+				<div class="subtitle" id="subtitlePosition">			
+					<ul class="liststyle">
+					<li>持仓</li>
+					</ul>				
+				</div>
+				
+				<div id="position-wrap">
+					<div class="tableHead">
+					<table id="position-table" class="tableStyle">			
+						<tr class="yellowText">
+							<th>交易代码</th>
+							<th>最新值</th>
+							<th>开仓均价</th>
+							<th>持仓均价</th>
+							<th>浮动盈亏</th>
+							<th>浮动盈亏比</th>
+							<th>到期日期</th>
+							<th>手数</th>
+							<th>买/卖</th>
+						</tr>
+					</table>
+					</div>
+					<div id="position-scroll">
+						<table id="position-tbody" class="tableStyle">
+							<tr>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+						</table>
+					</div>
+				</div>	
+			</div>
+		</div>	<!--bottom结束-->	
+	</div>		
+
+	</body>
+</html>

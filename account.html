@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,target-densitydpi=device-dpi">
+
+	<!--添加网页icon图标-->
+	<link rel="shortcut icon" href="./logo_32.ico">
+	<link rel="Bookmark" href="./logo_32.ico">
+	<meta name="author" content="TTD">
+
+	<title>个人账户</title>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./css/account.css" />
+	<!-- javascript -->
+	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="./js/account.js"></script>
+</head>
+
+<body>
+	<header class="title">
+		<div class="banner">
+			<span class="logo"><img src="./res/img/logo_22.png"></span>
+			<span class="nav">个人账户</span>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="general">
+			<div class="label-wrap">
+				<label class="label username">用户名:<span id='username'></span></label>
+			
+				<label class="label accountbalance">账户余额:<span id='accountbalance'></span></label>
+			</div>
+			<div class="button-wrap">
+				<button class="button button-backhome">返回主页</button>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="col-left col">
+				<div class="leftlist-wrap">
+					<ul class="leftlist">
+						<a href="#positions" class="anchor">
+							<li class='button-positions list'>当前持仓情况</li>
+						</a>
+						<a href="#strategy" class="anchor">
+							<li class='button-strategy list'>策略列表</li>
+						</a>
+						<a href="#profile" class="anchor">
+							<li class='button-profile list'>基本资料</li>
+						</a>
+						<a href="#settings" class="anchor">
+							<li class='button-settings list'>安全设置</li>
+						</a>
+						<a href="#recharge" class="anchor">
+							<li class='button-recharge list'>充值提现</li>
+						</a>
+						<a href="#about" class="anchor">
+							<li class='button-about list'>关于我们</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-right col">
+				<!-------------------------------持仓--------------------------------->
+				<a name="positions">
+					<div id="positions-wrap" class="col-right-top">
+						<div class="subtitle right-subtitle">
+							<ul class="liststyle">
+								<li>当前持仓情况</li>
+							</ul>
+						</div>
+						<div class="thead-wrap yellowText positions-thead-wrap">
+							<table class="tableStyle positions-thead">
+								<tr>
+									<th>交易代码</th>
+									<th>成交量</th>
+									<th>最新值</th>
+									<th>开仓均价</th>
+									<th>持仓均价</th>
+									<th>浮动盈亏</th>
+									<th>浮动盈亏比</th>
+									<th>到期日期</th>
+									<th>手数</th>
+									<th>买/卖</th>
+								</tr>
+							</table>
+						</div>
+						<div class="positions-tbody-wrap">
+							<table id="positions-tbody" class="tableStyle">
+							</table>
+						</div>
+					</div>
+				</a>
+				<!-----------------------------策略列表----------------------------->
+				<a name="strategy">
+					<div id="strategylist-wrap" class="col-right-top">
+						<div class="subtitle">
+							<ul class="liststyle">
+								<li>策略列表</li>
+							</ul>
+						</div>
+						<div class="thead-wrap strategylist-thead-wrap">
+							<table class="tableStyle strategylist-thead">
+								<tr>
+									<th width="25%">策略名称</th>
+									<th width="75%">策略简介</th>
+								</tr>
+							</table>
+						</div>
+						<div class="strategylist-tbody-wrap">
+							<table id="strategylist-tbody" class="tableStyle">
+								<col width="25" />
+								<col width="75" />
+							</table>
+						</div>
+					</div>
+				</a>
+				<!-----------------------------基本资料----------------------------------->
+				<a name="profile">
+					<div id="profile-wrap" class="col-right-top">
+						<div class="subtitle">
+							<ul class="liststyle">
+								<li>基本资料</li>
+							</ul>
+						</div>
+						<div class="profilelist-wrap">
+							<ul class="profilelist">
+								<li>用户名:
+									<input type="text">
+								</li>
+								<li>性别:
+									<input type="">
+								</li>
+								<li>出生年月:
+									<input type="date">
+								</li>
+								<li>邮箱:
+									<input type="email">
+								</li>
+								<li>手机:
+									<input type="text">
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+				<!-----------------------------安全设置-------------------------->
+				<a name="settings">
+					<div id="settings-wrap" class="col-right-top">
+						<div class="subtitle">
+							<ul class="liststyle">
+								<li>安全设置</li>
+							</ul>
+						</div>
+						<div class="">
+							<ul class="message">
+								<li id="li_one">
+									<ul id="list_one">
+										<li>
+											<button class="but"><img src="./res/img/ico_lock.png" />修改密码</button>
+										</li>
+										<li>已绑定邮箱:</li>
+										<li>已绑定手机号:</li>
+										<li>已绑定银行卡:</li>
+										<li>
+											<img src="./res/img/ico_plus.png" />
+											<button class="but">添加银行卡</button>
+										</li>
+									</ul>
+								</li>
+								<li id="li_two">
+									<ul id="list_two">
+										<li><span id="email"></span></li>
+										<li><span id="tel"><span></li>
+											<li><span id="card"></span></li>
+									</ul>
+								</li>
+								<li id="li_two">
+									<ul id="list_two">
+										<li>
+											<button class="but">更换邮箱</button>
+										</li>
+										<li>
+											<button class="but">更换手机号</button>
+										</li>
+										<li>
+											<button class="but">解除绑定</button>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+				<!-------------------------------充值提现------------------------------->
+				<a name="recharge">
+					<div id="recharge-wrap" class="col-right-top">
+						<div class="subtitle">
+							<ul class="liststyle">
+								<li>充值提现</li>
+							</ul>
+						</div>
+						<div class="">
+							<ul class="message">
+								<li id="li_one">
+									<ul id="list_one">
+										<li>用户名</li>
+										<li>账户余额:</li>
+										<li>银行卡:</li>
+										<li>充值金额:</li>
+										<li>提现金额:</li>
+									</ul>
+								</li>
+								<li id="li_one">
+									<ul id="list_two">
+										<li><span id="aname"></span></li>
+										<li><span id="amoney"></span></li>
+										<li><span id="acard"></span></li>
+										<li>
+											<input type="text" name="fname" style="width:8rem" />元</li>
+										<li>
+											<input type="text" name="fname" style="width:8rem" />元</li>
+									</ul>
+								</li>
+								<li id="li_three">
+									<ul id="list_two">
+										<li>
+											<button class="but">确认充值</button>
+										</li>
+										<li>
+											<button class="but">确认提现</button>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+				<!---------------------------关于我们---------------------------------->
+				<a name="about">
+					<div id="aboutus-wrap" class="col-right-top">
+						<div class="subtitle">
+							<ul class="liststyle">
+								<li>关于我们</li>
+							</ul>
+						</div>
+						<div id="aboutus">
+							<p>Toption</p>
+							<p>TTD</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!--col-right结束-->
+		</div>
+		<!--main结束-->
+	</div>
+</body>
+
+</html>

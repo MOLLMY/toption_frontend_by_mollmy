@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,target-densitydpi=device-dpi">
+
+	<!--添加网页icon-->
+	<link rel="shortcut icon" href="./logo_16.ico">
+	<link rel="Bookmark" href="./logo_32.ico">
+	<meta name="author" content="TTD">
+	<title>策略查看</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./css/strategycheck.css" />
+	<!--添加网页icon图标-->
+	<link rel="shortcut icon" href="./logo_32.ico">
+	<link rel="Bookmark" href="./logo_32.ico">
+	<!-- javascript -->
+	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="./js/strategycheck.js"></script>
+</head>
+
+<body>
+	<header class="top">
+		<div class="banner">
+			<span class="logo"><img src="./res/img/logo_22.png"></span>
+			<span class="nav">自动交易</span>
+		</div>
+	</header>
+	
+	<div class="container">
+		<div class="row-top">
+			<div class="content">
+				<div class="col-left col-left-1 strategyintroduction">
+					<div class="subtitle">
+						<ul class="liststyle">
+							<li>策略说明</li>
+						</ul>
+					</div>
+					<div class="introduction-wrap">
+					<p>相同目标相同到期时间波动率应该相近</p>
+					<p>将其差距缩小或消失为平仓</p>
+					</div>
+				</div>
+				<div class="col-right col-right-1 strategyinformation">
+					<div class="subtitle">
+						<ul class="liststyle">
+							<li>策略信息</li>
+						</ul>
+					</div>
+					<div class="information-wrap">
+					<table class="tableStyle">
+						<tr>
+							<td class="yellow"><span class="x">买入</span></td>
+							<td><span id="buy"></span></td>
+						</tr>
+						<tr>
+							<td class="yellow"><span class="x">所需金额</span></td>
+							<td><span id="money"></span></td>
+						</tr>
+						<tr>
+							<td class="yellow"><span class="x">预计盈亏</span></td>
+							<td><span id="make"></span></td>
+						</tr>
+						<tr>
+							<td class="yellow"><span class="x">盈亏比率</span></td>
+							<td><span id="rate"></span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			</div>
+			
+			<div class="row-bottom">
+				<div id="left" class="left">
+					<div class="subtitle">
+						<ul class="liststyle">
+							<li>期权详细数据</li>
+						</ul>	
+					</div>			
+					<div id="view">
+						<table class="tableStyle">
+							<tr id="viewTableHead">
+								<th>最新价</th>
+								<th>涨跌额</th>
+								<th>涨跌幅</th>
+								<th>买价</th>
+								<th>卖价</th>
+								<th>最高价</th>
+								<th>最低价</th>
+								<th>总手</th>
+								<th>到期日</th>
+								<th>更新时间</th>
+							</tr>
+							<tr id="viewTable">
+								<td>-</td>
+								<td id="a">-</td>
+								<td id="b">-</td>
+								<td id="c">-</td>
+								<td id="d">-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+						</table>
+					</div>
+					<div id="upAndDown">
+						<div id="tableHead">
+						<table class="tableStyle">
+							<tr  class="yellow" align="center" class="height">
+								<th colspan="6">
+									<span class="x">看跌</span>
+								</th>
+								<th style="border:0;">
+									<hr size="2px" color="#2e2e2e">
+								</th>
+								<th colspan="6" style="border:0;">
+									<span class="x">看涨</span>
+								</th>
+						</tr>
+						<tr class="height">
+							<th>交易代码</th>
+							<th>成交量</th>
+							<th>卖价</th>
+							<th>买价</th>
+							<th>涨跌幅</th>
+							<th>现价</th>
+							<th id="exercisePrice">行权价</th>
+							<th id="n_price">现价</th>
+							<th>涨跌幅</th>
+							<th>买价</th>
+							<th>卖价</th>
+							<th>成交量</th>
+							<th>交易代码</th>
+						</tr>
+					</table>
+				</div>
+				<div class="scrollTable" id="optionDataSheets-scroll">
+					<table id="contentTable" class="tableStyle">
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="right" class="right">
+			<div id="chart">
+				<div class="subtitle" id="subtitleChart">
+					<ul class="liststyle">
+						<li>
+							<button id="chart-button" class="chartButton">走势图</button>
+							<button id="probability-button" class="chartButton">盈亏图/概率图</button>
+						</li>
+					</ul>
+				</div>
+				<div id="image"></div>
+			</div>
+			<div id="bnt">
+				<div>
+					<div id="bnt_left">
+						<a href="#">
+							<button class="button" id="subButton">自动交易</button>
+						</a>
+					</div>
+					<div id="bnt_right">
+						<a href="#">
+							<button class="button" id="subButton">手动交易</button>
+						</a>
+					</div>
+				</div>
+				<br/>
+				<div>
+					<a href="#">
+						<button class="button">取消使用该策略</button>
+					</a>
+				</div>
+				<div class="but">
+					<a href="#">
+						<button class="button" type="submit" disabled>返回主页</button>
+					</a>
+				</div>
+				<div class="but">
+					<a href="account_1.htm">
+						<button class="button" type="submit">个人账户</button>
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>

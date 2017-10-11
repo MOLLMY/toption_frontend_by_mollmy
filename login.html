@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+		<meta name="viewport" content="width=device-width,=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,target-densitydpi=device-dpi">		
+		<!--添加网页icon图标-->
+		<link rel="shortcut icon" href="./logo_16.ico">
+		<link rel="Bookmark" href="./logo_32.ico">
+		<meta name="author" content="TTD">
+		<meta name = "keywords" content = "登录Toption，登陆Toption，登录toption，登陆toption，登录TOPTION,登陆TOPTION">
+		<title>登录Toption</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="./css/login.css" />		
+		<!-- javascript -->
+		<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="./js/login.js"></script>
+	</head>
+	
+	<body>
+		
+	<div id="container">
+		<div class="loginWrap">
+		<!--Logo图文-->
+		<div id='bannerHolder' align="center">
+			<img src="./res/img/logo.png" id="logo" alt="Toption"/><!-- logo图 -->		
+			<span id="banner" align="center"><!-- logo字 -->
+				<span id="bannerUpper">T</span><span id="bannerLower">option</span>
+			</span>	
+		</div>
+		<div id="bodyWrap">
+			<form id="inputHolder">
+				<input type="text" id="username" class="input" name="username" placeholder="用户名" />
+				<input type="password" id="password" class="input" name="password" placeholder="密码" />
+					
+				<!-- 忘记密码 --> 
+				<a id="forgetPswd" href="##">忘记密码?</a>
+	
+				<!--按钮部分-->				
+				<button id="login" class="button" type="submit"><span class="oneletter">登</span>录</button>
+			</form>		
+			
+		</div>
+		</div>
+		<!--底部立即注册部分-->
+			<div class="end" >
+				<p class="endHolder">
+					<span id="noAccount">没有账号？</span>
+					<span id="registNow"><a href="./register.html">立即注册</a></span>
+				</p>
+			</div>
+		<!-- 提示字部分 -->
+		<div id="tipHolder"></div>	
+	</div><!--container结束-->
+	
+	</body>
+</html>

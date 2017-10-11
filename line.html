@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <style>
+     html,body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+      }
+    /*  #myCanvas {
+        border: 5px solid #000;
+      }
+      .button{
+        border-radius: 50%;
+        background: #405b9e;
+        border: 1px solid #405b9e;
+        height: 200px;
+        width: 200px;
+        position: fixed;
+      }
+      .button-1{
+        top: 30px;
+        left: 30px;
+      }
+      .button-2{
+        bottom: 30px;
+        right: 30px;
+      }*/
+    
+    </style>
+    
+  </head>
+  <body>
+    <!--<button class="button button-1"></button>
+    <button class="button button-2"></button>-->
+    <canvas id="myCanvas" width="700" height="500">
+      
+    </canvas>
+    
+    <script>
+      
+     /* var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+ 
+      var x = $(window).width();
+      var y = $(window).height();
+      // alert("画不画");
+      context.beginPath();
+      context.moveTo(120, 120);
+      context.lineTo(x-300, y-100);
+      context.lineWidth=5;
+      context.strokeStyle='#405b9e';
+      context.lineCap='round';
+      
+      context.stroke();*/
+      
+      draw2d.layout.connection.SplineConnectionRouter = draw2d.layout.connection.ManhattanConnectionRouter.extend({  
+    NAME: "draw2d.layout.connection.SplineConnectionRouter",  
+    init: function () {  
+        this.spline = new draw2d.util.spline.CubicSpline();  
+        //this.spline = new draw2d.util.spline.BezierSpline();  
+        //this.spline = new draw2d.util.spline.CatmullRomSpline();  
+          
+        this.MINDIST = 50, this.cheapRouter = null;  
+          },
+    route: function (conn) {  
+        var i = 0;  
+        var fromPt = conn.getStartPoint();  
+        var fromDir = this.getStartDirection(conn);  
+        var toPt = conn.getEndPoint();  
+        var toDir = this.getEndDirection(conn);  
+        this._route(conn, toPt, toDir, fromPt, fromDir);  
+        var ps = conn.getPoints();  
+        conn.oldPoint = null;  
+        conn.lineSegments = new draw2d.util.ArrayList();  
+        conn.basePoints = new draw2d.util.ArrayList();  
+        var splinePoints = this.spline.generate(ps, 8);  
+        splinePoints.each(function (i, e) {  
+            conn.addPoint(e);  
+        });  
+        var ps = conn.getPoints();  
+        length = ps.getSize();  
+        var p = ps.get(0);  
+        var path = ["M", p.x, " ", p.y];  
+        for (i = 1; i < length; i++) {  
+            p = ps.get(i);  
+            path.push("L", p.x, " ", p.y);  
+          }  
+        conn.svgPathString = path.join("");  
+        }
+      });
+      
+      var oval2 =  new draw2d.shape.basic.Oval(100,80);  
+      var port2 = new draw2d.HybridPort();  
+      oval2.addPort(port2);  
+      canvas.addFigure(oval2,200,200);  
+        
+      var router = new draw2d.layout.connection.SplineConnectionRouter();  
+      //var router = new draw2d.layout.connection.DirectRouter();  
+      var conn = new draw2d.Connection(router)   
+      conn.setSource(port1);  
+      conn.setTarget(port2);  
+      canvas.addFigure(conn); 
+      
+    </script>
+  </body>
+</html>
