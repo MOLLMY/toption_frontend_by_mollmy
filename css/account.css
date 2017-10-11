@@ -1,0 +1,300 @@
+
+@font-face {
+	font-family: impact;
+	src: url("../res/font/impact.eot"),
+		 url("../res/font/impact.otf"),
+		 url("../res/font/impact.svg"),
+		 url("../res/font/impact.ttf"),
+		 url("../res/font/impact.woff");
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	min-width: 1017px;
+}
+body{
+	background: #1e1e1e;
+	color: #fff;
+	font-size: 100%;
+	font-family: 黑体,微软雅黑;
+}
+/*顶部nav*/
+.title{
+	margin-top: 0;
+	background-color: #2c2c30;
+	height: 1.6rem;
+	width: 100%;	
+	font-size: 0.8rem;
+	padding-left: 0 0 0 5px;
+	box-sizing: border-box;
+	margin: 0;
+}
+.logo{/*图*/
+	position: absolute;
+	padding: 2px;	
+}
+.nav{/*字*/
+	position: absolute;
+	margin-left: 25px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+/****整体容器*******************/
+.container{
+	width: 100%;
+	margin: 1px 0 0 3px;
+	font-size: 0.75rem;
+	
+	}
+	
+/****小标题样式*************/
+.subtitle{/*横幅小标题容器*/
+	font-size: 0.85rem;
+	padding-top: 0.0625rem;
+	background-color: #333333;
+	box-sizing: border-box;
+	margin-top: 0;
+	
+}
+.liststyle{/*ul*/
+	margin: 0 0.3125rem;
+	padding-left: 1.25rem;	
+}
+.subtitle li{ /*小标题前的图标*/
+	list-style-image: url(../res/img/listtag.png);	
+	padding-bottom: 2px;
+	box-sizing: border-box;
+}
+/****表格样式********************************/
+.tableStyle{
+  	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;/*等宽*/	
+	font-size: 0.75rem;
+}
+.tableStyle td{
+	border: 1px solid #303030;
+	color: #dedede;
+	padding:3px 7px 2px 7px; 
+}
+.tableStyle th{
+	background-color: #333;
+	border-left: 2px solid #2e2e2e;
+	padding:5px 7px 4px 7px;
+}
+.thead-wrap{
+	margin-top: 5px;
+	font-size: 0.8rem;
+	letter-spacing: 0.1rem;
+	/*padding-right: 5px;*/
+	box-sizing: border-box;
+}
+.thead-wrap td{
+	background-color: #333;
+	border-left: 2px solid #2e2e2e;
+}
+.yellowText{
+	color: #fbb303;
+	}
+
+/*****账户概况*********************/
+.general{
+	width: 100%;
+	font-size: 1rem;
+	color: #fbb303;
+	/*height: 1.7rem;*/
+	box-sizing: border-box;
+	padding: 13px 50px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #333;
+}
+#accountbalance,#username{
+	color: #fff;
+	margin-left: 4px;
+}
+.label-wrap{
+	display: flex;
+	align-items: center;
+	width: 50%;
+}
+.accountbalance{
+	margin-left:40%; 
+}
+
+.button{/*****按钮部分*****/
+	font-family:'Microsoft Yahei','微软雅黑','STHeiTi','华文黑体';
+	font-size: 0.75rem;
+	color: #fff;
+	background-color: #555;
+	border:1px solid #5c5c5c;
+	border-radius: 3px;
+	padding: 4px 0;
+	box-sizing: border-box;
+	width: 10rem;
+	letter-spacing:0.3rem;
+}
+.button:hover {
+	background: #4a4a4a;
+}
+/*****main部分*********************/
+.main{
+	width: 100%;
+	height:36rem;
+	display: flex;
+	padding: 0;
+}
+.col{
+	border-top: 1px solid #333;
+	height:37.5rem;
+	margin-right: 0;
+}
+.col-left{
+	width: 18%;	
+	padding: 4px 5px 2px;
+	box-sizing: border-box;
+}
+.col-right{
+	width: 81%;
+	padding: 0 0 5px 2px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+/*****left部分*********************/
+.leftlist-wrap{
+	height: 100%;
+	background-color: #262626;
+	padding: 20px 0;
+	box-sizing: border-box;
+}
+.leftlist{/*去掉list前面的原点*/
+	list-style-type :none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.leftlist li{
+	padding-left: 3rem;
+	/*两者相同，保证文字在li中垂直居中*/
+	height: 2.5rem;
+	line-height:2.5rem;
+}
+
+.leftlist-active{
+	background: #212121;
+}
+/*****right部分**********************************/
+
+.col-right-top{/***与上一部分的间距****/
+	margin-top: 3.6rem;	
+	padding-top: 4px;
+	padding-right: 5px;
+	box-sizing: border-box;
+	}	
+
+/*****蓝色字体按钮****/
+.but{ 
+	color: #5977c9;
+	background-color: #1e1e1e;
+	border: 0;
+	padding-left:0;
+	font-family: "Microsoft Yahei", "微软雅黑", "STHeiti", "华文黑体";
+	}
+/*********基本资料部分*********/
+
+.message{
+	margin-left: 10px;}
+.message li{
+	list-style-type :none;
+	}
+#li_one{
+	width:25%;
+	float: left;
+	}
+#li_two{
+	width:20%;
+	float: left;
+	padding-top: 1.7rem;
+	}
+#li_three{
+	width:20%;
+	float: left;
+	padding-top: 6rem;
+	}
+#list_one{
+	font-size:0.75rem;
+	margin-left: 4rem;
+	margin-top: 1.5rem;
+	list-style-type :none;
+	}
+#list_one li{
+	/*两者相同，保证文字在li中垂直居中*/
+	height: 2rem;
+	line-height:2rem;
+	}
+#list_two{
+	font-size:0.75rem;
+	margin-left: 0.5rem;
+	margin-top: 1.5rem;
+	list-style-type :none;
+	}
+#list_two li{
+	/*两者相同，保证文字在li中垂直居中*/
+	height: 2rem;
+	line-height:2rem;
+	}
+
+#positions-wrap{
+	margin-top: 0;
+	}
+#settings-wrap{
+	height:202px;
+	}
+#recharge-wrap{
+	height:202px;
+	}
+
+
+
+/******滚动条样式*********************************/
+::-webkit-scrollbar {
+	width:5px;
+	margin-right:2px;
+	
+}
+::-webkit-scrollbar:horizontal {
+	height:5px;
+	margin-bottom:2px
+}
+::-webkit-scrollbar-track {
+    border-radius: 1px;
+	
+} 
+::-webkit-scrollbar-track-piece {
+	background-color: #1e1e1e;
+	border-radius: 1px;
+	border:#333 1px solid;
+}
+::-webkit-scrollbar-thumb {
+	width:5px;
+	border-radius: 5px;
+	background: #333; 
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #3a3a3a; 
+}
+/*左侧menu样式*/
+.leftlist li{
+	cursor: default;
+}
+.leftlist a{	
+	color: #fff;
+	text-decoration: none;
+}
+.leftlist a:hover{
+	font-weight: 600;
+}

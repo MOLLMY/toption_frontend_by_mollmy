@@ -1,0 +1,229 @@
+@font-face {
+	font-family: impact;
+	src: url("../res/font/impact.eot"),
+		 url("../res/font/impact.otf"),
+		 url("../res/font/impact.svg"),
+		 url("../res/font/impact.ttf"),
+		 url("../res/font/impact.woff");
+}
+html,body{
+	height: 100%;
+	margin: 0;
+}
+body{
+	top: 0;
+	background-color: #1e1e1e;
+	font-size: 100%;/* 默认字号16px */
+}
+#container{	
+		
+	padding: 0;
+	margin: 0;
+	height:100%;
+	min-width: 232px;
+	min-height: 439px;
+	-webkit-box-align: stretch;
+	
+	display:-webkit-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+}
+.loginWrap{
+	padding: 0;
+	margin: 0;
+}
+/* logo图文部分 */
+#bannerHolder {
+	margin: 0;	
+	width: 100%;/* 如果宽度为100%，则对齐没有效果 */
+	font-family: impact;
+}	
+
+/*提示语部分*/
+#tipHolder {	
+	width:100%;
+	background: #FF6A6A;
+	text-align: center;
+	line-height: 3rem;
+	overflow: hidden;
+	font-size: 1.2rem;
+	font-family: "Microsoft Yahei", "微软雅黑", "STHeiti", "华文黑体";
+	color: #EDEDED;
+	position: fixed;
+	top: 1px;
+	display: none;		
+}
+@media all and (max-width:639px)
+{
+	
+	.loginWrap{
+		height: 100%;
+	}
+	/* logo图文部分 */
+	#bannerHolder {	
+		margin-top: 20px;		
+		padding: 10px;
+		box-sizing: border-box;
+		display: block;
+	}
+	
+	#bodyWrap {
+		margin: 20px 0 0;/* 上下，左右 */	
+		width: 100%;
+		padding: 20px;
+		box-sizing: border-box;
+		position: absolute;
+		right: 0;
+	}
+	
+	#inputHolder{
+		margin: 0;
+		padding: 0;
+		display: block;
+	}
+	
+	.end{		
+		position: relative;
+		bottom: 50px;	
+	}
+
+}
+@media all and (min-width:639px)
+{
+	.loginWrap{
+		width: 330px;
+		min-height:200px;
+		-webkit-box-align: stretch;
+		display: flex;
+		align-items: stretch;
+		-webkit-box-orient:vertical;
+		-webkit-box-direction: normal;
+		flex-direction: column;
+		flex-shrink: 0;/*不缩小*/
+	}
+	
+	#bodyWrap{
+		width: 100%;
+		margin:30px 0 0;/* 上下，左右 */
+	}
+	/* 输入框部分 */
+	#inputHolder {	
+		width:100%;
+		padding:20px;
+		box-sizing: border-box;
+	}
+
+	.end{				
+		margin-top:20px;
+	}
+}
+/*******************************************************/
+/*bannerHolder部分*/
+img{
+	width:18%;
+	min-width:4.5rem;
+}
+	/* logo图 */
+#logo {
+	vertical-align: middle;
+}
+/*Toption字*/
+#banner {
+	font-size: 3.8rem;/* 80px /16px*/
+	letter-spacing:0;/* 2px/16px */
+	vertical-align: middle;		
+}
+/* 大写字母 */
+#bannerUpper {
+	color: #4F94CD;
+}
+/* 小写字母 */
+#bannerLower {
+	color: #A6A6A6;
+}
+
+/* 用户名和密码输入框 */
+.input{
+	font-size: 0.88rem;/* 14.08px */
+	margin-bottom: 20px;
+	font-family: 'Tw Cen MT',"Microsoft Yahei", "微软雅黑", "STHeiti", "华文黑体";
+	color:#333;
+	width:100%;
+	padding: 9px 8px 7px;
+	boxing-sizing:border-box;
+    -webkit-box-sizing:border-box;
+	
+	-webkit-appearance: none;
+	background-color: #fcfcfc;
+	border: 1px solid #a6a6a6;
+	border-radius: 0.2rem;
+}
+	
+/* 忘记密码 */
+#forgetPswd{
+	font-size: 0.8rem;
+	margin: -5px;
+	padding-left: 10px;
+	box-sizing:border-box;
+	float:left;
+	font-weight: 600;
+}
+#inputHolder a:link {color: #4A708B;text-decoration: none;}
+#inputHolder a:visited{color:#8e8e8e;}
+#inputHolder a:hover {color: #36648B;}
+#inputHolder a:active {color: #87CFFF;}
+
+.button{
+	margin-top: 20px;
+	font-size:1rem;/* 16px */
+	font-family:'Microsoft Yahei','微软雅黑','STHeiTi','华文黑体';
+	color:#fff;
+	font-weight: 600;
+	text-align: center;
+	background:#636363;
+	border:0;
+	border-radius:0.3rem;
+	padding:8px 15%;/* 上下，左右 */
+	outline: none;
+	width:100%
+}
+.oneletter{
+	letter-spacing: 4rem;
+}
+
+.endHolder{
+	margin: 0;
+	padding:0;
+	font-weight: 600;
+	display: block;
+	text-align: center;
+}
+#noAccount{	
+	color: #8e8e8e;	
+}
+
+#registNow a:link {color: #4A708B;text-decoration: none;}
+#registNow a:visited{color:#8e8e8e;}
+#registNow a:hover {color: #36648B;}
+#registNow a:active {color: #87CFFF;}
+	
+
+/* 鼠标经过时的光影效果 */
+#login:hover{
+	border-width:0;
+	background: #4D4D4D;
+}
+
+#login:disabled {
+	background: #636363;
+	cursor: not-allowed;
+	box-shadow: 0 0 0 0 #636363;
+}
+
+
+
